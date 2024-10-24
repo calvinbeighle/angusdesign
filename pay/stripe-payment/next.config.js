@@ -3,10 +3,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Add other configurations here as needed
   devIndicators: {
-    buildActivity: false
-  }
+    buildActivity: false,
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/pay',
+        permanent: true, // Set to true for a permanent redirect (301), false for temporary (302)
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
