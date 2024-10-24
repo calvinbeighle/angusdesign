@@ -1,0 +1,48 @@
+/* PayPage.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh; /* Dynamically adjusts based on viewport height */
+    padding: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+  }
+  
+  .content {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-weight: 300;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .loading {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .stripe-input {
+    width: 100%; /* Make the input take the full width of its container */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  @media (max-width: 600px) {
+    .stripe-input {
+      font-size: 1rem; /* Adjust font size for mobile */
+    }
+  }

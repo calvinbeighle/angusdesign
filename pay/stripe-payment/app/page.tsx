@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
-      <head>
+      <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
@@ -17,6 +18,14 @@ export default function Home() {
         <title>Angus Design</title>
         <link rel="icon" href="/A-Icon.png?v=1" type="image/png" />
         <style>{`
+          @font-face {
+            font-family: 'Helvetica Neue';
+            src: url('/fonts/HelveticaNeueUltraLight.woff2') format('woff2'),
+                 url('/fonts/HelveticaNeueUltraLight.woff') format('woff');
+            font-weight: 100;
+            font-style: normal;
+            font-size: 3rem;
+          }
           html, body {
             margin: 0;
             padding: 0;
@@ -41,7 +50,7 @@ export default function Home() {
             font-size: 0.9rem; /* Very small font */
             color: #4a4a4a; /* Slightly off-black */
             letter-spacing: 0.5px;
-            font-family: 'Helvetica', 'Helvetica', sans-serif;
+            font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
             font-weight: 400; 
             text-decoration: none; /* Removes the underline */
           }
@@ -57,17 +66,15 @@ export default function Home() {
             }
           }
         `}</style>
-      </head>
-      <body>
-        <div className="centered-text">angus made this</div>
-        <a
-          href="tel:+14062036674"
-          rel="noopener noreferrer"
-          className="call-link"
-        >
-          CALL
-        </a>
-      </body>
+      </Head>
+      <div className="centered-text">angus made this</div>
+      <a
+        href="tel:+14062036674"
+        rel="noopener noreferrer"
+        className="call-link"
+      >
+        CALL
+      </a>
     </>
   );
 }

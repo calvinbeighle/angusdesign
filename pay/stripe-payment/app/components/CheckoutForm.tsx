@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import { useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js';
+import styles from '../pay/PayPage.module.css';
 
 const CheckoutForm = () => {
   const [loading, setLoading] = useState(false);
 
-  // Initialize stripe and elements hooks
   const stripe = useStripe();
   const elements = useElements();
 
@@ -38,7 +38,9 @@ const CheckoutForm = () => {
   return (
     <div style={{ padding: '40px', fontFamily: "'Helvetica Neue', sans-serif", fontWeight: 100 }}>
       <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
-        <PaymentElement />
+        <div className={styles.stripeInput}>
+          <PaymentElement />
+        </div>
         <button
           type="submit"
           disabled={loading}

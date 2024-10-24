@@ -4,11 +4,27 @@ import { useState, useEffect } from 'react';
 import { loadStripe, StripeElementsOptions } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from '../components/CheckoutForm';
+import styles from './PayPage.module.css';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 const PayPage = () => {
   const [clientSecret, setClientSecret] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Set the custom height on mobile devices
+    const setDynamicVH = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    setDynamicVH();
+    window.addEventListener('resize', setDynamicVH);
+
+    return () => {
+      window.removeEventListener('resize', setDynamicVH);
+    };
+  }, []);
 
   useEffect(() => {
     // Fetch the client secret when the component mounts
@@ -39,25 +55,17 @@ const PayPage = () => {
   };
 
   return (
-    <div style={{ 
-      display: 'flex', 
-      flexDirection: 'column', 
-      alignItems: 'center', 
-      justifyContent: 'center', 
-      minHeight: '100vh', 
-      padding: '40px', 
-      fontFamily: "'Helvetica Neue', sans-serif", 
-      fontWeight: 100,
-      fontSize: '1.1rem' // Slightly increased font size
-    }}>
-      <h3 style={{ fontWeight: 100, textAlign: 'center', fontSize: '1.8rem' }}>thanks</h3>
-      {clientSecret ? (
-        <Elements stripe={stripePromise} options={options}>
-          <CheckoutForm />
-        </Elements>
-      ) : (
-        <p style={{ fontSize: '1.2rem' }}>Loading...</p>
-      )}
+    <div className={styles.container} style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
+      <div className={styles.content}>
+        <h1 className={styles.title}>Thank You!</h1>
+        {clientSecret ? (
+          <Elements stripe={stripePromise} options={options}>
+            <CheckoutForm />
+          </Elements>
+        ) : (
+          <p className={styles.loading}>Loading...</p>
+        )}
+      </div>
     </div>
   );
 };
