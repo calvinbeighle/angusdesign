@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Customer Portal</title>
+    <style>
+        :root {
+            --foreground: #4a4a4a;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+            font-weight: 100;
+            background-color: white;
+            color: var(--foreground);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-weight: 300;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .signin-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .signin-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--foreground);
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            font-weight: 300;
+            text-decoration: none;
+            color: var(--foreground);
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .signin-button:hover {
+            background-color: var(--foreground);
+            color: white;
+        }
+
+        .signin-button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--foreground);
+        }
+
+        .divider span {
+            padding: 0 0.5rem;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        input {
+            padding: 0.5rem;
+            border: 1px solid var(--foreground);
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .forgot-password a {
+            color: var(--foreground);
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+        <div class="signin-options">
+            <a href="#" class="signin-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google logo">
+                Sign in with Google
+            </a>
+            <a href="#" class="signin-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple logo">
+                Sign in with Apple
+            </a>
+        </div>
+        <div class="divider">
+            <span>or</span>
+        </div>
+        <form class="email-form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="signin-button">Sign In</button>
+        </form>
+        <div class="forgot-password">
+            <a href="#">Forgot password?</a>
+        </div>
+    </div>
+</body>
+</html>
