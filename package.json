@@ -6,6 +6,6 @@
     "express-session": "^1.18.1",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
-    "vercel": "^39.1.2"
+    "vercel": "^39.3.0"
   }
 }
