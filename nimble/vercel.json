@@ -1,0 +1,25 @@
+{
+  "rewrites": [
+    {
+      "source": "/nimble/assets/:path*",
+      "destination": "/nimble/assets/:path*"
+    },
+    {
+      "source": "/nimble/:path*",
+      "destination": "/nimble/index.html"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/nimble/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}

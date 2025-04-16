@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Portal</title>
+    <style>
+        :root {
+            --background: #f8f8f8;
+            --foreground: #4a4a4a;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+            font-weight: 100;
+            background-color: var(--background);
+            color: var(--foreground);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        nav a, nav button {
+            color: var(--foreground);
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-right: 1rem;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: inherit;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 2rem 0;
+        }
+
+        h1, h2 {
+            font-weight: 300;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .profile-info img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: white;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            margin-right: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div>
+                <a href="/" style="font-size: 1.25rem;">Logo</a>
+                <a href="/">Home</a>
+                <a href="/shop">Shop</a>
+                <a href="/billing">Billing</a>
+                <a href="/orders">Orders</a>
+                <a href="/settings">Settings</a>
+            </div>
+            <button onclick="alert('Logout functionality to be implemented')">Logout</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>PROFILE OVERVIEW</h1>
+        <div class="grid">
+            <section class="card">
+                <div class="profile-info">
+                    <img src="https://via.placeholder.com/100" alt="Profile Photo">
+                    <div>
+                        <h2>John Doe</h2>
+                        <p>john@example.com</p>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <h2>ACCOUNT DETAILS</h2>
+                <ul>
+                    <li><a href="/profile/edit">Edit Profile</a></li>
+                    <li><a href="/profile/addresses">Address(es)</a></li>
+                </ul>
+            </section>
+            <section class="card">
+                <h2>PAYMENT INFO</h2>
+                <ul>
+                    <li><a href="/payment/cards">Saved Cards</a></li>
+                    <li><a href="/payment/default">Default Payment Method</a></li>
+                    <li><a href="/payment/history">Billing History</a></li>
+                </ul>
+            </section>
+            <section class="card">
+                <h2>ORDERS / TRANSACTIONS</h2>
+                <ul>
+                    <li><a href="/orders/1">Order #1234</a></li>
+                    <li><a href="/orders/2">Order #5678</a></li>
+                </ul>
+                <a href="/orders">View All</a>
+            </section>
+            <section class="card">
+                <h2>SUBSCRIPTIONS / MEMBERSHIPS</h2>
+                <p>Plan details, next billing date, etc.</p>
+            </section>
+            <section class="card">
+                <h2>SETTINGS & PREFERENCES</h2>
+                <ul>
+                    <li><a href="/settings/notifications">Notifications</a></li>
+                    <li><a href="/settings/privacy">Privacy</a></li>
+                    <li><a href="/settings/language">Language</a></li>
+                    <li><a href="/settings/security">Password & Security</a></li>
+                </ul>
+            </section>
+            <section class="card">
+                <h2>HELP & SUPPORT</h2>
+                <ul>
+                    <li><a href="/support/contact">Contact</a></li>
+                    <li><a href="/support/faq">FAQ</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <span>Contact Info: support@example.com</span>
+        </div>
+    </footer>
+</body>
+</html>

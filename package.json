@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "build:nimble": "cd nimble && npm install && npm run build",
+    "copy:nimble": "rm -rf public/nimble && mkdir -p public/nimble && cp -R nimble/dist/* public/nimble",
+
+    "build:avrio": "cd avrio-logistics && npm install && npm run build",
+    "copy:avrio": "rm -rf public/avrio-logistics && mkdir -p public/avrio-logistics && cp -R avrio-logistics/dist/* public/avrio-logistics",
+
+    "build": "npm run build:nimble && npm run copy:nimble && npm run build:avrio && npm run copy:avrio",
+    "dev": "cd nimble && npm run dev"
+  },
+  "dependencies": {
+    "@nicokaiser/passport-apple": "^3.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "vercel": "^39.3.0"
+  }
+}

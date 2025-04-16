@@ -1,0 +1,42 @@
+{
+  "rewrites": [
+    {
+      "source": "/nimble/assets/:path*",
+      "destination": "/nimble/assets/:path*"
+    },
+    {
+      "source": "/nimble/:path*",
+      "destination": "/nimble/index.html"
+    },
+    {
+      "source": "/avrio‑logistics/assets/:path*",
+      "destination": "/avrio‑logistics/assets/:path*"
+    },
+    {
+      "source": "/avrio‑logistics/:path*",
+      "destination": "/avrio‑logistics/index.html"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/nimble/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/avrio‑logistics/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}

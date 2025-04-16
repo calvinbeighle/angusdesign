@@ -1,0 +1,159 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl font-bold;
+  }
+}
+
+/* Custom design system variables */
+:root {
+  --design-accent: #4C63F6;
+  --design-black: #151825;
+  --design-gray-50: #F8F9FC;
+  --design-gray-100: #F1F3F9;
+  --design-gray-200: #E4E7F2;
+  --design-gray-300: #D1D6E6;
+  --design-gray-400: #A8B0CC;
+  --design-gray-500: #6E7899;
+  --design-gray-600: #4A5173;
+  --design-gray-700: #363C59;
+  --design-gray-800: #252840;
+  --design-gray-900: #151825;
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-design-accent text-white font-medium rounded-lg transition-colors hover:bg-design-accent/90;
+  }
+  
+  .nav-link {
+    @apply relative font-medium text-design-gray-700 hover:text-design-accent transition-colors;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  /* Animation classes */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .animate-on-scroll.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* Custom text colors */
+.text-design-accent {
+  color: var(--design-accent);
+}
+
+.text-design-black {
+  color: var(--design-black);
+}
+
+.text-design-gray-400 {
+  color: var(--design-gray-400);
+}
+
+.text-design-gray-500 {
+  color: var(--design-gray-500);
+}
+
+.text-design-gray-600 {
+  color: var(--design-gray-600);
+}
+
+/* Custom background colors */
+.bg-design-accent {
+  background-color: var(--design-accent);
+}
+
+.bg-design-black {
+  background-color: var(--design-black);
+}
+
+.bg-design-gray-50 {
+  background-color: var(--design-gray-50);
+}
+
+.bg-design-gray-100 {
+  background-color: var(--design-gray-100);
+}
+
+.bg-design-gray-800 {
+  background-color: var(--design-gray-800);
+}
